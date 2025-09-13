@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+main {
+    margin: 5%;
+    section {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        padding: 10px;
+        button {
+            width: 60px;
+            height: 30px;
+        }
+        p {
+            font-family: "Pangolin";
+            margin: 0;
+            margin-left: 6px;
+        }
+    }
+    span {
+        font-family: "Quicksand";
+    }
+}
+#rowDisplay {
+    display: flex;
+    justify-content: space-evenly;
+}
