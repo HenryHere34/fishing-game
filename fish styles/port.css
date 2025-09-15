@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+body {
+    background-color: #ceb6a2;
+}
+main {
+    font-family: "Funnel Display";
+    margin: 4%;
+    #sources {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 24px;
+    }
+    article {
+        p {
+            padding-left: 10px;
+            font-weight: 300;
+        }
+        section.sell {
+            display: flex;
+            flex-direction: column;
+            width: 35%;
+            height: 32px;
+            margin-bottom: 8px;
+        }
+        .land {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            height: 38px;
+        }
+        h1 {
+            padding-top: 40px;
+            font-size: 25px;
+            font-weight: 500;
+        }
+    }
+    article button{
+        font-weight: 450;
+    }
+}

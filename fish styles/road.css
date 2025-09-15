@@ -1,0 +1,16 @@
+body {
+    background-color: #c4c4c4;
+}
+main {
+    margin: 12%;
+    section {
+        margin: 40px;
+        padding-top: 30px;
+    }
+    section a{
+        font-size: 40px;
+        font-weight: 500;
+        color: #1a1a81;
+        text-decoration: none;
+    }
+}

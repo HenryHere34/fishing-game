@@ -21,15 +21,16 @@ function landfish1() {
     if (fishingLand1 == false) {
         fishingLand1 = true; //yeah because i know you'll try to spam the function, you...        creature...
         fishtext1.textContent = "land is fishing right now"
+        let currentfishtime = fishtime[0]
         land1Timetofish = setInterval(() => {
             for (i = 0; i < land1Lucktier; i++) {
-                let currentfishtime = fishtime[0]
+                currentfishtime--
                 fishchanceland();
-                console.log("hi")
                 if (currentfishtime == 0) {
                     clearInterval(land1Timetofish); fishingLand1 = false; fishtext1.textContent = "no bait is on the land"
                     break
                 }
+                break;
             } textDisplay(); savefish();
         }, 1000)
     } else {console.warn("the function is already active bro, stop")}
@@ -37,14 +38,15 @@ function landfish1() {
 function landfish2() { //huh...
     if (fishingLand2 == false) {
         fishingLand2 = true; fishtext2.textContent = "land is fishing right now"
+        let currentfishtime = fishtime[0]
         land2Timetofish = setInterval(() => {
-            for (i = 0; i = land1Lucktier; i++) { //i dont like loops that much
-                let currentfishtime = fishtime[0] //they are just hard to understand
+            for (i = 0; i = land1Lucktier; i++) { //i dont like loops that much, they are just hard to understand
+                currentfishtime--
                 if (currentfishtime == 0) {
                     clearInterval(land2Timetofish); fishingLand2 = false; fishtext2.textContent = "no bait is on the land"
                     break
                 }
-                fishchanceland();
+                fishchanceland(); break;
             } textDisplay(); savefish();
         }, 1000)
     } else {console.warn("the function is already active bro, stop")}
@@ -53,9 +55,10 @@ function landfish3() {
     if (lands >= 3 && lands <= 6) { // if you actually own this land, you can fish; else, don't
         if (fishingLand3 == false) {
             fishingLand3 = true; fishtext3.textContent = "land is fishing right now"
+            let currentfishtime = fishtime[0]
             land3Timetofish = setInterval(() => {
                 for (i = 0; i < land1Lucktier; i++) {
-                    let currentfishtime = fishtime[0]
+                    currentfishtime--
                     if (currentfishtime == 0) {
                         clearInterval(land3Timetofish); fishingLand3 = false; fishtext3.textContent = "no bait is on the land"
                         break
@@ -70,9 +73,10 @@ function landfish4() {
     if (lands >= 4 && lands <= 6) {
         if (fishingLand4 == false) {
             fishingLand4 = true; fishtext4.textContent = "land is fishing right now"
+            let currentfishtime = fishtime[0]
             land4Timetofish = setInterval(() => {
                 for (i = 0; i < land1Lucktier; i++) {
-                    let currentfishtime = fishtime[0]
+                    currentfishtime--
                     if (currentfishtime == 0) {
                         clearInterval(land4Timetofish);
                         fishingLand4 = false;
@@ -88,11 +92,11 @@ function landfish4() {
 function landfish5() {
     if (lands >= 5 && lands <= 6) {
         if (fishingLand5 == false) {
-            fishingLand5 = true;
-            fishtext3.textContent = "land is fishing right now"
-            land3Timetofish = setInterval(() => {
+            fishingLand5 = true; fishtext5.textContent = "land is fishing right now"
+            let currentfishtime = fishtime[0]
+            land5Timetofish = setInterval(() => {
                 for (i = 0; i < land1Lucktier; i++) {
-                    let currentfishtime = fishtime
+                    currentfishtime--
                     if (currentfishtime == 0) {
                         clearInterval(land5Timetofish); fishingLand5 = false; fishtext5.textContent = "no bait is on the land"
                         break;
@@ -104,14 +108,13 @@ function landfish5() {
     } else {window.alert("you don't own this land yet, try buying it on the trading port")}
 }
 function landfish6() {
-    if (lands = 6) {
+    if (lands == 6) {
         if (fishingLand6 == false) {
-            fishingLand6 = true;
-            let fishtime1 = fishtimes[0]; let fishtime2 = fishtimes[1]; let fishtime3 = fishtimes[2]; let fishtime4 = fishtimes[3];
-            fishtext3.textContent = "land is fishing right now"
-            land3Timetofish = setInterval(() => {
+            fishingLand6 = true; fishtext6.textContent = "land is fishing right now"
+            let currentfishtime = fishtime
+            land6Timetofish = setInterval(() => {
                 for (i = 0; i < land1Lucktier; i++) {
-                    let currentfishtime = fishtime
+                    currentfishtime--
                     if (currentfishtime == 0) {
                         clearInterval(land6Timetofish); fishingLand6 = false; fishtext6.textContent = "no bait is on the land"
                         break;
@@ -142,8 +145,8 @@ function fishchanceland() { //i tecnically dont even know what im doing here
     }
 }
 function textDisplay() {
-    fishDisplay.textContent = `You have ${fishes} fishes || you currently own ${lands} water lands`
-    moneyDisplay.textContent = `You currently have ${money}$`;
+    fishDisplay.textContent = `You have ${fishes} fishes || You currently own ${lands} water lands`
+    moneyDisplay.textContent = `You currently have ${money}$`
 }
 textDisplay();
 const pricerange1 = [68, 74, 71, 69, 65, 74]
@@ -179,13 +182,16 @@ function sell600() {
 }
 let landprice = parseInt(localStorage.getItem("waterlandprice")) || 560;
 let landpricetext = document.getElementById("newlandtext")
-landpricetext.textContent = `Buy land (${landprice})`
+function landpriceTextdisp () {
+    landpricetext.textContent = `Buy land (${landprice})`
+}
+landpriceTextdisp()
 function buynewland() {
     if (money < landprice) {
         alert("You don't have enough money right now"); return
     }
-    money -= landprice; lands++; landprice *= 4.5;
-    savelands(); savefish()
+    money -= landprice; lands++; landprice *= 4.5; landpricetext.textContent = "Sold! Come back later."
+    savelands(); savefish(); textDisplay()
 }
 function savefish() { //self explanatory
 localStorage.setItem("fishes", fishes); localStorage.setItem("dollars", money)

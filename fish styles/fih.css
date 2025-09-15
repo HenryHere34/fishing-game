@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+body {
+    background-color: #9898c2;
+}
 main {
     margin: 5%;
     section {
@@ -7,14 +10,16 @@ main {
         flex-direction: row;
         align-items: baseline;
         padding: 10px;
-        button {
+        .fishbutton {
             width: 60px;
             height: 30px;
+            font-weight: 500;
         }
         p {
             font-family: "Pangolin";
             margin: 0;
             margin-left: 6px;
+            font-weight: 450;
         }
     }
     span {
@@ -24,4 +29,7 @@ main {
 #rowDisplay {
     display: flex;
     justify-content: space-evenly;
+    span {
+        font-weight: 500;
+    }
 }

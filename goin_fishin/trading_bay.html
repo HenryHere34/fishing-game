@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fish styles/port.css">
     <title>trading fish</title>
 </head>
 <body>
     <main>
-        <section><span id="sourcesDisp"></span><span id="fishernetworth"></span></section>
+        <section id="sources"><span id="sourcesDisp"></span><span id="fishernetworth"></span></section>
         <article>
             <h1>Sell your fish here!</h1>
             <p>The usual sell price for 50 is around 70$, price may vary</p>
-            <section><button onclick="sell50()">Sell 50 fish</button></section>
-            <section><button onclick="sell200()">Sell 200 fish</button></section>
-            <section><button onclick="sell600()">Sell 600 fish</button></section>
+            <section class="sell"><button onclick="sell50()">Sell 50 fish</button></section>
+            <section class="sell"><button onclick="sell200()">Sell 200 fish</button></section>
+            <section class="sell"><button onclick="sell600()">Sell 600 fish</button></section>
         </article>
         <article>
             <h1>Buy more water lands!</h1>
             <p>Need more places to fish? get another water land to fish from</p>
-            <section><button id="newlandtext" onclick="buynewland()">Buy land</button></section>
+            <section class="land"><button id="newlandtext" onclick="buynewland()">Buy land</button></section>
         </article>
     </main>
 </body>
