@@ -29,7 +29,9 @@ main {
             display: flex;
             flex-direction: column;
             width: 40%;
-            height: 38px;
+            button {
+                height: 38px;
+            }
         }
         h1 {
             padding-top: 40px;
