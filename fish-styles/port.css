@@ -20,8 +20,10 @@ main {
             display: flex;
             flex-direction: column;
             width: 35%;
-            height: 32px;
             margin-bottom: 8px;
+            button {
+                height: 32px;
+            }
         }
         .land {
             display: flex;
